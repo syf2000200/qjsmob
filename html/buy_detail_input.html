@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>空白模板</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" href="../../thirdvendor/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../less/app.css">
+    <script src="../../thirdvendor/less/less-1.7.4.min.js"></script>
+
+    <!-- holder.js 图片站位 可去掉-->
+    <script src="../../thirdvendor/holder/holder.min.js"></script>
+    <style type="text/css">
+        .m-custom>.layermcont{
+            padding: 0 28px;
+        }
+        .layermbox0 .layermchild.m-custom{
+            max-width: 960px;
+            width: 90%;
+        }
+        .m-dialog>h5{
+            margin-top: 29px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1;
+            color:#333;
+            text-align: center;
+        }
+        .m-dialog>.dialog-row{
+            margin-bottom: 15px;
+            font-size: 12px;
+            line-height: 1;
+            color: #666;
+        }
+    </style>
+</head>
+    
+<body class="bgf0">
+    <header class="header">
+        <div class="h-topbox">
+            <p class="h-top">立即购买</p>
+            <a href="" class="h-item-left icon-angle-left"></a>
+        </div>                     
+    </header>
+    <section>
+        <h3 class="h-tittle3 mg-t10">
+            <span class="left">鹿港小镇别墅A号楼逸乐通卡房产抵押00123</span>
+        </h3>
+        <div class="h-detail1-infor">
+            <ul class="h-order1ul">
+                <li>年化收益：
+                	
+	       		<!--选择前显示加息劵-->
+        			<span>6%</span>
+        		<!--END-->
+        		
+        		<!--选择后显示加息劵-->
+        			<!--<span class=" rede4">19%（9%+10%）</span> -->
+        		<!--END-->
+                </li>
+                <li>理财期限：<span>6个月</span></li>
+                <li>可购金额: <span><i>96,639.00</i>元</span></li>
+            </ul>
+        </div>
+        <p class="h-buydetail-p">1000起投1000递增 </p>   
+        <div class="commont-style">
+        	<div class="x-contenjst-buy-detail">
+        		            <div class="x-conjsttxt">
+	                            <p class="fs16">购买金额：</p>
+                            </div>
+                            <span class=" clearfix pd-0 counter">
+	                            <button href="#" class=""  onclick="cutMinus('#Num','#Plus','#Minus');">-</button>
+	                            <input type="text" data-max="40000" class="num" id="Num" value="1000" onchange="modVal('#Num')">
+	                            <button href="#" class="plus"  onclick="addPlus('#Num','#Plus','#Minus');">+</button>
+                            </span>
+                            
+            			</div>
+            <!--<div class="h-import-style-order-detail">
+                <p><span class="rg-fs">认购份数：</span>
+                <span class="clearfix counter-detail-order">
+                    <button href="#" class="icon-minus" id="Minus" onclick="cutMinus('#Num','#Plus','#Minus');"></button>
+                    <input type="text" data-max="100" class="num" id="Num" value="1" onchange="modVal('#Num')">
+                    <button href="#" class="icon-plus" id="Plus" onclick="addPlus('#Num','#Plus','#Minus');"></button>
+                </span>
+            </p>
+            <p>认购金额：<span class="pink"><i id="Amount" data-mon="1000">1000</i>元</span></p>
+            <input type="hidden" name="" id="AmountInd" value="1000">
+            </div>-->
+            
+     
+        </div>   
+       <a href="#" class="my-jxj">
+        	<span class="h-left h-fs14 grey32">加息</span>
+        	<div class="h-right h-fs12 grey32">
+        		<!--选择前显示加息劵-->
+        			<span class="f-left" style="padding-right: 20px;">选择加息券</span> 
+        		<!--END-->
+        		
+        		<!--选择后显示加息劵-->
+        			<!--<span class="f-left rede4" style="padding-right: 20px;">+10%的加息劵</span> -->
+        		<!--END-->
+        		<i href="" class="h-item-right icon-angle-right right-icons"></i>
+        	</div>
+        	
+        </a>
+        <p class="h-buydetail-p h-buydetail-p2">预计收益: <i class="rede4">36.00</i>元</p>
+        <div class="h-buydetail-p h-buydetail-p2"><input class="iconright" type="radio" value="1">我已阅读<i class="rede4">《理财协议》</i></div>                  
+        <div class="container">
+            <input type="button" class="btn-red h-orderbtn" id="toPay" value="马上支付">
+        </div> 
+    </section>
+
+<!-- javascript -->
+<script src="../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../thirdvendor/zepto1.0/touch.js"></script>
+<script src="../../thirdvendor/layer.m/layer.m.js"></script>
+<script src="../js/base.js"></script>
+<script>
+//计时器
+//$(function(){
+//  // showmsg('网络无响应，无法生成订单，请检查您的网络连接，并重新提交！');
+//  inputVal($('#realName'));
+//  inputVal($('#ID'));
+//  inputVal($('#phone'));
+//  inputVal($('#particular'));
+//  buyAmount(1);
+//	//
+//})
+//$(".headtog").on('click',function(){
+//	$(".headhide").toggle();
+//})
+//;(function(){
+//	$(".x-ialak").attr("disabled","disabled")
+//	$(".x-hitems").hide();
+//	$(".x-ysd").hide();
+//	$('.mt').get(0).checked=true;
+//	$(".x-ialak").on('click',function(){
+//		$(".x-hitems").hide();
+//		$(".x-abot").show();
+//		$(".x-ysd").show();
+//	})
+//	$(".row_abot").on('click',function(){
+//		$(".site").attr("disabled","disabled");
+//		$(".x-hitems").show();
+//		$(".x-ysd").hide();
+//		for (var i=0;i<$('.mt').length;i++) {
+//			$('.mt').get(i).checked=false;
+//		}
+//	})
+//  $('.x-abot li').on('click',function(){
+//     $('.mt').get(0).checked=false;
+//     $(this).find('.mt').get(0).checked=true;
+//     $(".x-hitems").hide();
+//		$(".x-ysd").show();
+//  });
+//	
+//})();
+////点击X 清空输入内容
+//function inputVal(obj){
+//  //点击X 清空输入内容
+//  $(obj).next('i').tap(function(){
+//      $(obj).val('');
+//      $(this).css('display','none');
+//  })
+// 
+//  if(obj.val().length > 0){
+//      obj.next('i').css('display','table-cell');
+//  }else{
+//      obj.next('i').css('display','none');
+//  }
+//  obj.on('input propertychange', function(){
+//      //console.log($(this).val().length);
+//      if($(this).val().length != 0){
+//          $(this).next('i').css('display','table-cell');
+//      }else{
+//        $(this).next('i').css('display','none');
+//      }
+//  })
+//}
+//
+////计算认购金额
+//function buyAmount(num){
+//  var per = $('#Amount'),
+//      perTxt = per.attr('data-mon'), all;
+//      all = Number(num)*Number(perTxt),
+//      $('#AmountInd').val(all);
+//      Number(all).formatMoney(2,"￥",",")
+//      per.text(Number(all).formatMoney(2,"￥",","));
+//}
+//
+//
+//
+//function addPlus(cta,plus,minus){
+//  var cta = $(cta),num,
+//      max = $(cta).attr('data-max');
+//      num = parseInt(cta.val());
+//  if(num < max){
+//      num = num+1;
+//      cta.val(num);
+//      buyAmount(num);
+//      $(minus).removeAttr ("disabled");
+//  }else{
+//      $(plus).attr("disabled","disabled");
+//      alert('最大不能超过'+max);
+//  }
+//}
+//
+//function cutMinus(cta,plus,minus){
+//  var cta = $(cta),num;
+//      num = parseInt(cta.val());
+//  if(num > 1){
+//      num = num-1;
+//      cta.val(num);
+//      buyAmount(num);
+//      $(plus).removeAttr ("disabled");
+//  }else{
+//      $(minus).attr("disabled","disabled");
+//      alert('最小不能超过1');
+//  }
+//}
+//
+//function modVal(cta){
+//  var cta = $(cta),num,
+//      max = $(cta).attr('data-max'),
+//      reg = new RegExp(/^[0-9]*[1-9][0-9]*$/);
+//      num = parseInt(cta.val());
+//  if(!reg.test(num)){
+//      cta.val('1');
+//      alert("请输入数字！");
+//  }else if(num > max){
+//      cta.val('1');
+//      alert('最大不能超过'+max);
+//  }else{
+//      buyAmount(num);
+//  }
+//}
+
+/**
+ * @program: 加弹层
+ * @author songshijie
+ * @date 20150906
+ *
+ *
+ * */
+(function(){
+    var toPay = document.querySelector('#toPay');
+    if(!toPay) return;
+    toPay.addEventListener('click', payDialog, false);
+
+
+    function getTpl(type, totalmoney, expmoney, expremoney){
+        var cls;
+        type==='pc'? cls = 'pc-dialog' : cls = 'm-dialog';
+        return [
+            '<div class="'+cls+'">',
+            '<h5>确认支付</h5>',
+            '<div class="dialog-row"><span>我的钱包：</span><span>'+totalmoney+'元</span></div>',
+            '<div class="dialog-row"><span>体&nbsp;&nbsp;验&nbsp;&nbsp;金：</span><span>'+expmoney+'元</span></div>',
+            '<div class="dialog-row"><span>快捷支付：</span><span>'+expremoney+'元</span></div>',
+            '</div>'
+        ].join('');
+    }
+
+    function payDialog(){
+        layer.open({
+            content: getTpl(null, '5000.00', '0.00', '1000.00'),
+            btn: ['确认', '取消'],
+            shadeClose: false,
+            className: 'm-custom',
+            yes: function(){
+                layer.open({content: '你点了确认', time: 1});
+            }, no: function(){
+                layer.open({content: '你选择了取消', time: 1});
+            }
+        });
+    }
+})()
+
+
+
+
+
+
+/*** 千分位转换***/
+Number.prototype.formatMoney = function (places, symbol, thousand) {
+    places = !isNaN(places = Math.abs(places)) ? places : 2;
+    symbol = symbol !== undefined ? symbol : "$";
+    thousand = thousand || ",";
+    // decimal = decimal || ".";
+    var number = this,
+        negative = number < 0 ? "-" : "",
+        i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
+        j = (j = i.length) > 3 ? j % 3 : 0;
+    return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand);
+};
+
+
+
+//计算认购金额
+
+
+function addPlus(cta,plus,minus){
+    var cta = $(cta),num,
+        max = $(cta).attr('data-max');
+        num = parseInt(cta.val());
+    if(num < max){
+        num = num+1000;
+        cta.val(num);
+        $(minus).removeAttr ("disabled");
+    }else{
+        $(plus).attr("disabled","disabled");
+        alert('最大不能超过'+max);
+    }
+}
+
+function cutMinus(cta,plus,minus){
+    var cta = $(cta),num;
+        num = parseInt(cta.val());
+    if(num > 1000){
+        num = num-1000;
+        cta.val(num);
+        $(plus).removeAttr ("disabled");
+    }else{
+        $(minus).attr("disabled","disabled");
+        alert('最小不能超过1000');
+    }
+}
+
+function modVal(cta){
+    var cta = $(cta),num,
+        reg = new RegExp(/^[0-9]*[1-9][0-9]*$/);
+        num = parseInt(cta.val());
+        var max = $(cta).attr('data-max');
+    if(!reg.test(num)){
+        cta.val('1000');
+        alert("请输入数字！");
+    }else if(num < max){
+//  	var d=num.toString();
+//  	var i = Math.pow(10,d.length-1);
+//		var nums=(Math.round(d/i))*i;
+//		if(nums<1000){
+//			cta.val('1000');
+//		}else{
+//			cta.val(nums);
+//		}
+		var d=Math.ceil(num/1000);
+		var nums=d*1000;
+		cta.val(nums);
+   	}else{
+   		cta.val('1000');
+        alert('最大不能超过'+max);
+    }
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>

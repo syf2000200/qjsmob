@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>空白模板</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" href="../../thirdvendor/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../less/app.css">
+
+    <!-- holder.js 图片站位 可去掉-->
+    <script src="../../thirdvendor/holder/holder.min.js"></script>    
+</head>
+    
+<body class="bgf0">
+    <header class="header">
+        <div class="h-topbox">
+            <p class="h-top">提交申请成功</p>
+            <a href="" class="h-item-left icon-angle-left"></a>
+        </div>                     
+    </header>
+    <section>
+        <div class="failed_Text">
+         <h5><img src="../img/tanhao.jpg">抱歉，你的新手购买次数已满</h5>
+         <dl>
+             <dt>新手专享购买规则：</dt>
+             <dd>1. 新手专享是仟金所为新用户提供的一款专属理财产品。理财期限为7天。</dd>
+             <dd>2. 新手专享现金仅能购买一次。</dd>
+             <dd>3. 新手专享不限制体验金购买次数，用户可通过邀请好友获得体验金，进行多次购买；</dd>
+             <dd>4. 体验金不可提现，使用有效期为15天，若不投资，逾期将自动作废；</dd>
+             <dd>5. 如有疑问请联系400-805-1000；</dd>
+             <dd>6. 本活动遵守仟金所法律声明，规则释权归仟金所所有；</dd>
+         </dl>
+         <a href="https://www.qianjins.com/finance/list.html" class="btn_failed">去看看别的理财产品吧</a>
+         
+        </div>
+        <!-- <div class="text_S">
+             <h5>高收益理财产品</h5>
+             <div>
+                 <span>
+                     <img src="../img/yyuetou.jpg">
+                     <a href="https://www.qianjins.com/finance/list.html?narrow=1&duration=1_1">去看看</a>
+                 </span>
+                 <span>
+                     <img src="../img/syuetou.jpg">
+                     <a href="https://www.qianjins.com/finance/list.html?narrow=1&duration=3_3">去看看</a>
+                 </span>
+                 <span>
+                     <img src="../img/lyuetou.jpg">
+                     <a href="https://www.qianjins.com/finance/list.html?narrow=1&duration=6_6">去看看</a>
+                 </span>
+                 <span>
+                     <img src="../img/seyuetou.jpg">
+                     <a href="https://www.qianjins.com/finance/list.html?narrow=1&duration=12_12">去看看</a>
+                 </span>
+             </div>
+         </div> -->
+    </section>
+
+<!-- javascript -->
+<script src="../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../thirdvendor/zepto1.0/touch.js"></script>
+<script>
+//计时器
+
+$(function(){
+    //raido
+    $('.h-order1ul2 .ul2li').on('click',function(){
+        $('.iconright').prop('checked',false);
+        $('.iconright2').prop('checked',false);
+        $(this).find('.iconright').prop('checked',true);
+    });
+    $('.h-order1ul2 .ul2li2 li').on('click',function(){
+        $('.iconright').prop('checked',false);
+        $('.iconright2').prop('checked',false);
+        $(this).find('.iconright2').prop('checked',true);
+        $(this).parents('.h-order1ul2').find('.iconright').prop('checked',true);
+    });
+    countDown("3000","#hms");
+})
+// 倒计时
+function countDown(sys_second,id){ 
+    var hour, minute, second,
+        watch = $(id),
+        timer = setInterval(function(){ 
+        if (sys_second > 0) { 
+            
+            sys_second -= 1; 
+            hour = Math.floor((sys_second / 3600) % 24); 
+            minute = Math.floor((sys_second / 60) % 60); 
+            second = Math.floor(sys_second % 60); 
+            hour=hour<10?"0"+hour:hour;//计算小时 
+            minute=minute<10?"0"+minute:minute;//计算分钟 
+            second=second<10?"0"+second:second;//计算秒杀 
+            watch.text(hour).append(" : ").append(minute).append(" : ").append(second);
+        } else { 
+            clearInterval(timer);
+        } 
+    }, 1000); 
+}
+</script>
+
+
+
+</body>
+</html>

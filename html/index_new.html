@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>首页</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" href="../../thirdvendor/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../less/app.css">
+
+    <!-- holder.js 图片站位 可去掉-->
+    <script src="../../thirdvendor/holder/holder.min.js"></script>    
+</head>
+    
+<body class="bgf0">
+    <header class="header headerfixed">
+    	<div class="h-index-head-sy">
+    		<a class="logo" href=""></a>
+    		
+    		<nav class="h-nav">
+    			<a class="n-home">首页</a> 
+    			<a class="n-financial">理财</a> 
+    			<a class="n-found">发现</a> 
+    			<a class="n-my">我的</a> 
+    			<!--<a class="h-more"></a> -->
+    		</nav>
+    		
+    	</div>    	
+    </header>
+    <section class="clearfix">
+    	<div class="h-falseheader-index-sy"></div>
+          <div class="h-index-container  clearfix">
+          	<div class="up-alert-font">
+          		<a href="#" class="span-one">亲，提现需要设置交易密码与银行卡，快去绑定吧</a>
+          		<span class="btn-close"></span>
+          	</div><!--up-alert-font-->
+          	<div class="wrap" id="scroll_img">
+          		<ul class="clearfix"> 
+          			<li><img  src="../img/index_banner640.png" alt="" /></li>
+          			<li><img  src="../img/index_banner02.png" alt="" /></li>
+          			<li><img  src="../img/index_banner03.png" alt="" /></li>
+          		</ul>
+          		<span class="scroll_position_bg opacity6"></span>
+              <ul class="scroll_position" id='scroll_position'>
+                  <li class="on"><a href="javascript:void(0);">1</a></li>
+                  <li><a href="javascript:void(0);">2</a></li>
+                  <li><a href="javascript:void(0);">3</a></li>
+              </ul>
+          		<!--后补-->
+          	</div><!--slider-->
+			
+			<div class="register-number">
+				<div class="register-size ">
+					<div class="fLeft left-main">
+						<img src="../img/zhuceliang.jpg"  />
+						<span>注册用户量</span>
+					</div>
+					<div class="wire fLeft"></div>
+					<div class="fLeft right-main">878,240</div>
+				</div>
+				
+				
+				
+			</div>
+			<div class="warp-list">
+				<div class="fLeft left-activity">
+					<img src="../img/xinshouzhuanxiang.jpg"  />
+					<span>新手专享</span>
+				</div>
+				<div class="fLeft left-activity">
+					<img src="../img/huodongzhuanqu.jpg"  />
+					<span>活动专区</span>
+				</div>				
+			</div>
+			<div class="plan-detail">
+				<img src="../img/3a.png" class="fLeft round-color"/>
+				<div class="plan-time fLeft">
+					<p>3个月计划<s></s></p>
+					<p>超灵活，预期年化收益率9%</p>
+				</div>
+				<span  class="fRight state-color">热销中</span>
+			</div>
+			<div class="plan-detail">
+				<img src="../img/6a.png" class="fLeft round-color"/>
+				<div class="plan-time fLeft">
+					<p>6个月计划</p>
+					<p>高性价，预期年化收益率10%</p>
+				</div>
+				<span  class="fRight state-color">热销中</span>
+			</div>
+			<div class="plan-detail">
+				<img src="../img/12a.png" class="fLeft round-color"/>
+				<div class="plan-time fLeft">
+					<p>12个月计划</p>
+					<p>高收益，预期年化收益率12%</p>
+				</div>
+				<span  class="fRight state-color">热销中</span>
+			</div>
+
+			<div class="zhuanrangZ">
+				<a href="">
+					<h4>转让专区</h4>
+					<div>
+						<span>更多红包让你拿</span>
+						<span><img src="../img/red_packet.png"><i></i></span>
+					</div>
+					<s>&gt;</s>
+				</a>
+			</div>
+			
+			
+    </section>
+<!-- javascript -->
+<script src="../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../thirdvendor/zepto1.0/touch.js"></script>
+<script type="text/javascript" src="../../thirdvendor/circles/circles.js"></script>
+<script type="text/javascript" src="../../thirdvendor/swipe/Swipe.js"></script>
+<script>
+
+$(function(){
+	
+	//circle
+Circles.create({
+    id:'circles-2',
+    percentage:90,
+    radius:40,
+    width:4,
+    number:90,
+    text:'%',
+    colors:['#ccc', '#ff5d5c'],
+    duration:2000
+})  
+
+Circles.create({
+    id:'circles-3',
+    percentage:90,
+    radius:40,
+    width:4,
+    number:90,
+    text:'%',
+    colors:['#ccc', '#ff5d5c'],
+    duration:2000
+})  
+
+Circles.create({
+    id:'circles-4',
+    percentage:90,
+    radius:40,
+    width:4,
+    number:90,
+    text:'%',
+    colors:['#ccc', '#ff5d5c'],
+    duration:2000
+})  
+
+$('.btn-close').click(
+	function(){
+		$('.up-alert-font').hide();
+	}
+)
+
+
+//轮播的代码
+
+var slider = Swipe(document.getElementById('scroll_img'), {
+  auto: 3000,
+  continuous: true,
+  callback: function(pos) {
+    var i = bullets.length;
+    while (i--) {
+      bullets[i].className = ' ';
+    }
+    bullets[pos].className = 'on';
+  }
+});
+var bullets = document.getElementById('scroll_position').getElementsByTagName('li');
+$(function(){
+  $('.scroll_position_bg').css({
+    width:$('#scroll_position').width()
+  });
+});
+
+
+});//最外面的jquery $
+
+//判断鼠标滚动的JS 显示隐藏事件代码；
+$(window).scroll(function(){
+　　var scrollTop = $(this).scrollTop();
+　　var scrollHeight = $(document).height();
+　　var windowHeight = $(this).height();
+　　if(scrollTop + windowHeight>scrollHeight-30){
+　　　　$('.div-gd-qj-xs').show();
+　　}else{
+	  $('.div-gd-qj-xs').hide();
+  }
+});
+
+
+
+</script>
+
+
+
+</body>
+</html>

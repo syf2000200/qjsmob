@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>空白模板</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+	<link rel="stylesheet" href="../../thirdvendor/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../less/app.css">
+</head>
+    
+<body class="bgf0">
+    <header class="header headerfixed">
+        <div>
+            <p class="h-top">收益详情</p>
+            <a href="" class="h-item-left icon-angle-left"></a>
+        </div>
+    </header>
+    <section>
+		<p class="title-content" style="margin-top:45px">抵押物项目名称+理财编号</p>
+		
+		
+		<!--购买理财有收益显示此区域-->
+		<div class="money-header hide"  style="margin-bottom: 10px;">
+			<div class="earnings-money">
+				<p>55.23</p>
+				<p class="i-mbc-color">昨日收益(元)</p>
+				<img src="../img/right.png"  class="mark-picture"/>
+			</div>
+			<div class="all-money i-color">当前累计收益：1,120.00</div>
+		</div>
+		<!--END-->
+		
+		
+		<!--没有购买理财显示此区域-->
+		<a class="not-money-header">
+			<p class="current-money">12.99</p>
+			<p>累计收益(元)</p>
+			<!--收益三种状态  还有一种状态不需要-->
+				<!--收益结束-->
+				<img src="../img/syjs.png" class="state-loaction hide" />
+				<!--END-->
+				<!--转让完毕-->
+				<img src="../img/zrwb.png" class="state-loaction"/>
+				<!--END-->
+			<!--END-->
+			<img src="../img/right.png" class="fRight  right-picture"/>
+		</a>
+		<!--END-->
+		
+		<div class="lc-moeny-detail">
+			<div class="m-above">
+				<div class="m-above-commont m-above-left fLeft">
+					<p>原始理财总额</p>
+					<p>3120.00</p>
+				</div>
+				<div class="m-above-commont  fLeft">
+					<p>原始理财本金总额</p>
+					<p>2000.00</p>
+				</div>
+			</div>
+			<div class="m-botttom">
+				<div class="m-above-commont m-above-left fLeft">原始持有份数<span>2</span></div>
+				<div class="m-above-commont  fLeft">剩余收益天数<span>6</span></div>
+			</div>
+		</div>
+		
+		<!--红包部分-->
+		<div class="main-red-packet">
+			<div class="give-red-packet">
+				<div class="fLeft left-r-p">
+					<img src="../img/red_packet.png" class="fLeft"/>
+					<span class="fLeft">发出红包</span>
+				</div>
+				<div class="fRight right-r-p-money"><span>3450</span>元</div>
+			</div>
+			<p class="red-packet-info">发出的红包在您转出成功后扣除</p>
+		</div>
+		<!--ENd-->
+		
+		<div class="project-info">
+			<h3 class="p-i-title">项目信息</h3>
+			<div class="p-i-detail">
+				<h4 class="p-i-name">东参项目一期融资007</h4>
+				<div class="p-i-list">
+					<img src="../img/house.png" class="fLeft p-i-house"/>
+					<ol class="fLeft p-i-list-detail">
+						<li>预期年化收益率： <span>12%</span></li>
+						<li>理财期限：    <span>360</span>天</li>
+						<li>可购金额：    <span>300,000,000.00</span>元</li>
+						<li>理财总额：  <span>  300,000,000.00</span>元</li>
+					</ol>
+					<a href="#"><img src="../img/lc_right.jpg" class="lc-right"/></a>
+				</div>
+			</div>
+		</div>
+    </section>
+    <!--固定底部所有内容区域-->
+    
+     <!--再次购买 转让   转让三种状态需要每次渲染时候对应写 value 2 3 4  不同状态  会隐藏转让里面的img -->
+     
+		<div class="f-purchase" value="2">
+			<a href="#" class="commont-btn again-red fLeft">再次购买</a>
+			<a href="#" class="commont-btn  again-border fRight commont-popup" value="2">转让<img src="../img/lc_info.png" /></a>
+		</div>
+		
+    <!--END-->
+    
+    <!--取消转让    -->
+    
+	    <!--<div class="f-purchase " value="4">
+	    	<a href="javascript:void(0)" class="btn-red commont-popup" value="1">取消转让</a>
+	    </div>-->
+    
+    <!--END-->
+    
+    <!--END-->
+    
+    
+<!-- javascript -->
+<script src="../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../thirdvendor/zepto1.0/touch.js"></script>
+<script src="../../thirdvendor/layer.m/layer.m.js"></script>
+<link rel="stylesheet" type="text/css" href="../../thirdvendor/layer.m/need/layer.css"/>
+<script>
+   //弹窗的layer代码
+    function gLayer(btn){
+        var btn = document.querySelector(btn);
+        btn.addEventListener('click', getContet, false);
+		
+        function layers(g,a){
+            layer.open({
+                content: g,
+                btn: a,
+                yes: function(index){
+                    layer.open({
+                        btn: ['OK'],
+                        content:'成功'
+                    })
+                }, 
+                no: function(index){
+                    layer.close(index)
+                }
+            })
+        }
+        
+        function layerSecond(g,a){
+            layer.open({
+                content: g,
+                btn: a,
+                yes: function(index){
+                    layer.open({
+                        btn: ['确定'],
+                        content: '<p style="text-align:center;font-size:14px">取消转让操作成功</p>'
+                    +'<p style="color:#999;text-align:center;">24小时后可再次进行转让操作</p>'
+                    })
+                }, 
+                no: function(index){
+                    layer.close(index)
+                }
+            })
+        }
+        function getContet(){
+            var oVal = $(btn).attr("value"),oContent="";
+            if(oVal == '1'){
+                var oContent = '<p style="font-size:12px">取消转让后24小时内不能再次转让</p>'
+                    +'<input type="password" id="" placeholder="请输入交易密码：" value="" style="text-indent: 10px;height: 35px;margin: 10px 0px 0;min-width: 225px;"/>'
+                    +'<span style="display:block;line-height:26px;color:orange;font-size:12px;padding:0 5px;">交易密码输入错误，请重新输入</span>'
+                    +'<a href=""style="display: block;text-align: center;font-size: 12px;color: #007aff;">忘记交易密码</a>';
+                var oArray = ['确认','取消'];
+                layerSecond(oContent,oArray);          
+            }
+            if(oVal == '2'){
+                 oContent = '<p style="text-align:center;font-size:14px;margin-bottom:8px;"><b>提示</b></p>'
+	                    +'<span style="text-align:center;display: block;font-size:14px">新手/首发专享暂不支持转让<span/></br>';
+                var oArray = ['确认'];
+                layers(oContent,oArray);
+            }
+            if(oVal == '3'){
+                 oContent = '<p style="text-align:center;font-size:14px;margin-bottom:8px;"><b>提示</b></p>'
+	                    +'<span style="text-align:center;display: block;font-size:14px">距离您上次“取消转让”未满24小时，18小时之后方可转让<span/></br>';
+                var oArray = ['确认'];
+                layers(oContent,oArray);
+            }
+            if(oVal == '4'){
+            	 oContent = '<p style="text-align:center;font-size:14px;margin-bottom:8px;"><b>提示</b></p>'
+	                    +'<span style="text-align:center;display: block;font-size:14px">您持有该理财项目未满30天，28天之后方可转让<span/></br>';
+             	var oArray = ['确认'];
+             	layers(oContent,oArray);
+            }
+            /*
+                新手/首发专享暂不支持转让
+                距离您上次“取消转让”未满24小时，18小时之后方可转让
+                您持有该理财项目未满30天，28天之后方可转让
+//          */
+        }
+    }
+
+
+$(function(){
+    gLayer('.commont-popup');
+})
+
+</script>
+
+</body>
+</html>

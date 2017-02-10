@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>理财转让</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" href="../../thirdvendor/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../less/app.css">
+
+    <!-- holder.js 图片站位 可去掉-->
+    <script src="../../thirdvendor/holder/holder.min.js"></script>
+    <style type="text/css">
+        .m-custom>.layermcont{
+            padding: 0 28px;
+        }
+        .layermbox0 .layermchild.m-custom{
+            max-width: 960px;
+            width: 90%;
+        }
+        .m-dialog>h5{
+            margin-top: 29px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1;
+            color:#333;
+            text-align: center;
+        }
+        .m-dialog>.dialog-row{
+            margin-bottom: 15px;
+            font-size: 12px;
+            line-height: 1;
+            color: #666;
+        }
+        .m-dialog>.dialog-ipt{
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .m-dialog>.dialog-ipt>input{
+            width: 85%;
+            height: 36px;
+            border: 1px solid #DDD;
+            padding: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+    
+<body class="bgf0">
+    <header class="header">
+        <div class="h-topbox">
+            <p class="h-top">理财转让</p>
+            <a href="" class="h-item-left icon-angle-left"></a>
+        </div>                     
+    </header>
+    <section>
+        <div class="h-top-main">
+            <div class="h-top-main-money"><em>1000.00</em></div>
+            <p>预计转让收入（元）</p>
+            <i class="icon-angle-right"></i>
+        </div>
+        <div class="h-detail1-infor">
+            <ul class="h-order1ul h-order1ul-lc">
+                <li>理财本金：<span>1000.00元</span></li>
+                <li>理财收益：<span>+30元</span></li>
+                <li>转账费用: <span>0元</span></li>
+            </ul>
+        </div>
+        <p class="h-buydetail-p h-buydetail-lc">转让手续费在成交后从成交金额中扣除，不成交则无手续费</p>
+        <div class="commont-style commont-lc">
+        	<div class="x-contenjst-buy-detail lc-con">
+                <div class="x-conjsttxt"><span>转让份数:</span></div>
+                <span class=" clearfix pd-0 counter">
+                    <button href="#" class=""  onclick="cutMinus('#Num','#Plus','#Minus');">-</button>
+                    <input type="text" data-max="40000" class="num" id="Num" value="1000" onchange="modVal('#Num')">
+                    <button href="#" class="plus"  onclick="addPlus('#Num','#Plus','#Minus');">+</button>
+                </span>
+
+            </div>
+            <div class="x-contenjst-buy-detail lc-con">
+                <div class="x-conjsttxt"><span>剩余份数:</span></div>
+                <span class="counter-left">5000份</span>
+
+            </div>
+            <div class="lc-con clearfix">
+                <div class="lc-left lh33">
+                    <input type="checkbox"  value="1" /><span>转让红包设置</span>
+                </div>
+                <div class="lc-right">
+                    <input type="number" class="lc-con-input" placeholder="请输入1-1000元整数" id="bagCount"/><span>元/每份</span>
+                </div>
+            </div>
+        </div>   
+        <p class="lc-con">扣除转让总额部分金额作为现金红包，作为转入人的奖励转让收入会在成交次日存入钱包余额</p>
+        <div class="lc-con"><input type="checkbox" value="1">我已阅读<a href="javascript:;" ><i class="rede4">《理财转让及受让协议》</i></a></div>
+        <div class="container mg-b20">
+            <input type="button" class="btn-red h-orderbtn" id="toPay" value="马上支付">
+        </div> 
+    </section>
+
+<!-- javascript -->
+<script src="../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../thirdvendor/zepto1.0/touch.js"></script>
+<script src="../../thirdvendor/layer.m/layer.m.js"></script>
+<script>
+
+/**
+ * @program: 加弹层
+ * @author songshijie
+ * @date 20150906
+ *
+ *
+ * */
+(function(){
+    var toPay = document.querySelector('#toPay');
+    if(!toPay) return;
+    toPay.addEventListener('click', payDialog, false);
+
+
+    function getTpl(type){
+        var cls;
+        type==='pc'? cls = 'pc-dialog' : cls = 'm-dialog';
+        return [
+            '<div class="'+cls+'">',
+            '<h5>交易密码验证</h5>',
+            '<div class="dialog-ipt"><input type="password" placeholder="请输入仟金所交易密码"/></div>',
+            '</div>'
+        ].join('');
+    }
+
+    function payDialog(){
+        layer.open({
+            content: getTpl(null, '5000.00', '0.00', '1000.00'),
+            btn: ['确认', '取消'],
+            shadeClose: false,
+            className: 'm-custom',
+            yes: pwdOK,
+            no: pwdCancel
+        });
+    }
+})()
+
+/****检测按键是否为数字****/
+function keyCheck(event){
+    return 13 == event.keyCode || (46 == event.keyCode || (8 == event.keyCode || event.keyCode >= 96 && event.keyCode <= 105)) ? true : event.keyCode < 48 || event.keyCode > 57 ? false : true;
+}
+
+//确定回调事件
+function pwdOK(){
+    layer.open({content: '你点了确认', time: 1});
+}
+//取消回调事件
+function pwdCancel(){
+    layer.open({content: '你选择了取消', time: 1});
+}
+
+
+
+//计算认购金额
+
+
+function addPlus(cta,plus,minus){
+    var cta = $(cta),num,
+        max = $(cta).attr('data-max');
+        num = parseInt(cta.val());
+    if(num < max){
+        num = num+1000;
+        cta.val(num);
+        $(minus).removeAttr ("disabled");
+    }else{
+        $(plus).attr("disabled","disabled");
+        alert('最大不能超过'+max);
+    }
+}
+
+function cutMinus(cta,plus,minus){
+    var cta = $(cta),num;
+        num = parseInt(cta.val());
+    if(num > 1000){
+        num = num-1000;
+        cta.val(num);
+        $(plus).removeAttr ("disabled");
+    }else{
+        $(minus).attr("disabled","disabled");
+        alert('最小不能超过1000');
+    }
+}
+
+function modVal(cta){
+    var cta = $(cta),num,
+        reg = new RegExp(/^[0-9]*[1-9][0-9]*$/);
+        num = parseInt(cta.val());
+        var max = $(cta).attr('data-max');
+    if(!reg.test(num)){
+        cta.val('1000');
+        alert("请输入数字！");
+    }else if(num < max){
+//  	var d=num.toString();
+//  	var i = Math.pow(10,d.length-1);
+//		var nums=(Math.round(d/i))*i;
+//		if(nums<1000){
+//			cta.val('1000');
+//		}else{
+//			cta.val(nums);
+//		}
+		var d=Math.ceil(num/1000);
+		var nums=d*1000;
+		cta.val(nums);
+   	}else{
+   		cta.val('1000');
+        alert('最大不能超过'+max);
+    }
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>

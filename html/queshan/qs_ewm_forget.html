@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>空白模板</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" type="text/css" href="../../less/app.css">
+</head>
+    
+<body class="wrap-qs">
+		<img src="../../img/queshan/qs_t.jpg"  class="img-rsp"/>
+		<img src="../../img/queshan/queshanlogo.png" class="qs-logo" style="max-width:108px;max-height:40px;margin:0 auto;display:block;margin-top:78px;" />
+		<div class="login_form">
+			<form action="" onsubmit="return check()">
+				<div><label>手机号</label><input type="text" value="" placeholder="请输入手机号"></div>
+        <div><label>图形码</label><input type="password" value="" placeholder="请输入验证码" style="padding-left:54px;"><a href="" class="picma"><img src="../../img/queshan/picma.jpg"></a></div>
+				<div><label>验证码</label><input type="password" value="" placeholder="请输入验证码"><a href="" class="forget">忘记密码</a></div>
+        <div><label>新密码</label><input type="password" value="" placeholder="6-18位，子母和数字" id="J_text"><span><a href="javascript:;" class="forget" id="J_btn" onclick="oPassword('#J_text');"><img src="../../img/queshan/eyes.jpg"></a></span></div>
+				<input type="submit" value="提交">
+			</form>
+		</div>
+		<img src="../../img/queshan/qs_f.jpg" class="img-rsp qs-footer" />
+<!-- javascript -->
+<script src="../../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../../thirdvendor/zepto1.0/touch.js"></script>
+
+<script>
+
+function oPassword(obj){
+  var $text = $(obj);
+  if($text.attr("type") == "password"){
+    $text.prop("type","text");
+  }else{
+    $text.prop("type","password");
+  }
+}
+
+$(function(){
+	$("body").addClass("wrap-qs");
+})
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>空白模板</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" type="text/css" href="../../less/app.css">
+</head>
+    
+<body class="wrap-qs">
+		<img src="../../img/queshan/qs_t.jpg"  class="img-rsp"/>
+		<img src="../../img/queshan/queshanlogo.png" class="qs-logo" style="max-width:108px;max-height:40px;margin:0 auto;display:block;margin-top:78px;" />
+		<div class="login_form">
+			<form action="" onsubmit="return check()">
+				<div><label>登录名</label><input type="text" value="" placeholder=""></div>
+				<div><label>密码</label><input type="password" value="" placeholder=""><a href="" class="forget">忘记密码</a></div>
+				<input type="submit" value="登录">
+			</form>
+		</div>
+		<img src="../../img/queshan/qs_f.jpg" class="img-rsp qs-footer" />
+<!-- javascript -->
+<script src="../../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../../thirdvendor/zepto1.0/touch.js"></script>
+
+<script>
+function gYiiCreateUrl(controllerId, actionId, paramsStr) {
+    var url = "https://muc.qianjins.com/"+controllerId+"/"+actionId+".html";
+    if (url.indexOf("?") != -1) {
+        returnUrl = (paramsStr == "" || paramsStr == undefined) ? url : url + "&" + paramsStr;
+    } else {
+        returnUrl = (paramsStr == "" || paramsStr == undefined) ? url : url + "?" + paramsStr;
+    }
+    return returnUrl;
+}
+function check() {
+    var username = $("#username").val();
+    var password = $("#password").val();
+    var flag = true;
+    if (username.length === 0) {
+            alert('请输入用户名');
+//                                $('.msg-container').css('display', '').find('p').html('请输入用户名');
+            return false;
+    }
+
+    if (password.length === 0) {
+            alert('请输入密码');
+//                                $('.msg-container').css('display', '').find('p').html('请输入密码');
+            return false;
+    }
+
+   $.ajax({
+           type: "POST",
+           async: false, // 设置同步方式
+           cache: false,
+           url: gYiiCreateUrl('ajax', 'checkUserName'),
+           data: "username=" + username,
+           success: function(res) {
+                   if (res == 'non-existent') {
+                       alert('该账号还未注册，请先注册');
+//                                                $('.msg-container').css('display', '').find('p').html("该账号还未注册，请先注册");
+                           flag = false;
+                   }
+           }
+   });
+   if (!flag) {
+           return false;
+   }
+}
+
+$(function(){
+	$("body").addClass("wrap-qs");
+});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" href="../../thirdvendor/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../less/app.css">
+
+    <!-- holder.js 图片站位 可去掉-->
+    <script src="../../thirdvendor/holder/holder.min.js"></script>
+</head>
+
+<body class="bgf0">
+    <section class="clearfix">
+        <div class="qs-checkbox-foot">
+            <div class="qs-checkbox-no qs-checkbox-togg active1" onclick="checkBox(this);">
+                <div id="" class="qs-checkbox-yes">
+                </div>
+            </div>
+            <p>全选</p>
+            <h4>本金总计<span>10000</span>元</h4>
+            <a class="qs-finorder-btn qs-zr-btn">提 交</a>
+        </div>
+    </section>
+    <!-- javascript -->
+    <script src="../../thirdvendor/zepto1.0/zepto.js"></script>
+    <script src="../../thirdvendor/zepto1.0/touch.js"></script>
+    <script src="../../thirdvendor/layer.m/layer.m.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../thirdvendor/layer.m/need/layer.css"/>
+    <script>
+    //弹窗的layer代码
+    function gLayer(btn){
+        var btn = document.querySelector(btn);
+        btn.addEventListener('click', getContet, false);
+
+        function layers(g,a){
+            layer.open({
+                content: g,
+                btn: a,
+                yes: function(index){
+                    layer.open({
+                        btn: ['OK'],
+                        content:'成功'
+                    })
+                }, 
+                no: function(index){
+                    layer.close(index)
+                }
+            })
+        }
+
+        function getContet(){
+            var oVal = $('#oVal').val();
+            var oVal2 = $('#oVal2').val();
+            if(oVal == '1'){
+                var oContent = '<p style="font-size:12px">取消转让后24小时内不能再次转让</p>'
+                    +'<input type="password" id="" placeholder="请输入交易密码：" value="" style="text-indent: 10px;height: 35px;margin: 10px 0px 0;min-width: 225px;"/>'
+                    +'<span style="display:block;line-height:26px;color:orange;font-size:12px;padding:0 5px;">交易密码输入错误，请重新输入</span>'
+                    +'<a href=""style="display: block;text-align: center;font-size: 12px;color: #007aff;">忘记交易密码</a>';
+                var oArray = ['确认','取消'];
+            }
+            if(oVal == '2'){
+                var oContent = '<p style="text-align:center;font-size:14px">交易密码验证</p>'
+                    +'<input type="password" id="" placeholder="交易密码：" value="" style="text-indent: 10px;height: 35px;margin: 10px 0px;min-width: 225px;"/>';
+                var oArray = ['确认','取消'];
+            }
+            if(oVal == '3'){
+
+                if(oVal2 == '1'){
+                    var oText = '新手/首发专享暂不支持转让';
+                }
+                if(oVal2 == '2'){
+                    var oText = '距离您上次“取消转让”未满24小时，18小时之后方可转让';
+                }
+                if(oVal2 == '3'){
+                    var oText = '您持有该理财项目未满30天，28天之后方可转让';
+                }
+                var oContent = '<p style="text-align:center;font-size:14px;margin-bottom:8px;"><b>提示</b></p>'
+                        +'<span style="text-align:center;display: block;font-size:14px">'+oText+'<span/></br>';
+                var oArray = ['确认'];
+            }
+            if(oVal == '4'){
+                var oContent = '<p style="text-align:center;font-size:14px">取消转让操作成功</p>'
+                    +'<p style="color:#999;text-align:center;">24小时后可再次进行转让操作</p>';
+                var oArray = ['确认'];
+            }
+            /*
+                新手/首发专享暂不支持转让
+                距离您上次“取消转让”未满24小时，18小时之后方可转让
+                您持有该理财项目未满30天，28天之后方可转让
+            */
+
+            layers(oContent,oArray);
+        
+        }
+    }
+
+
+$(function(){
+    gLayer('.qs-zr-btn');
+})
+        
+        
+
+    
+    
+    </script>
+    <input type="hidden" id="oVal" value="4">
+    <input type="hidden" id="oVal2" value="2">
+</body>
+</html>

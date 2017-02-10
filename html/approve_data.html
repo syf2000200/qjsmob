@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>空白模板</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" href="../../thirdvendor/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../less/app.css">
+    <script src="../../thirdvendor/less/less-1.7.4.min.js"></script>
+    <!-- holder.js 图片站位 可去掉-->
+    <script src="../../thirdvendor/holder/holder.min.js"></script>    
+</head>
+    
+<body class="bgfff">
+    <header class="header">
+        <div class="h-topbox">
+            <p class="h-top">认证资料</p>
+            <a href="" class="h-item-left icon-angle-left"></a>
+        </div>
+    </header>
+    <section>
+    	<div class="container grey93 h-fs11">
+			<div class="commont-rahmen " id="J_person">
+				<!--未选择图片显示-->
+				<div class="not-picture">
+					<img src="../img/person.png" />
+					<p>本人审核照</p>
+					<img src="../img/camera.png" />
+				</div>
+				<!--END-->
+				
+				<!--选择图片显示 去掉class  给你not-picture 加上class hide-->
+				<img src="../img/pointer.png" width="104px" height="104px" class="hide"/>
+				<!--END-->
+			</div>
+			<div class="camera-title">1.请手持身份证拍摄，要求五官清晰且无遮挡，身份证资料清晰可辨。</div>
+			<div class="card-main">
+				<div class="commont-rahmen h-left marginR30" id="J_idz">
+					<!--未选择图片显示-->
+					<div class="not-picture">
+						<img src="../img/sfz.png" />
+						<p>身份证(正)</p>
+						<img src="../img/camera.png" />
+					</div>
+					<!--END-->
+					
+					<!--选择图片显示 去掉class  给你not-picture 加上class hide-->
+					<img src="../img/pointer.png" width="104px" height="104px" class="hide"/>
+					<!--END-->
+				</div>
+				<div class="commont-rahmen h-left " id="J_idf">
+					<!--未选择图片显示-->
+					<div class="not-picture">
+						<img src="../img/sfz.png" />
+						<p>身份证(反)</p>
+						<img src="../img/camera.png" />
+					</div>
+					<!--END-->
+					
+					<!--选择图片显示 去掉class  给你not-picture 加上class hide-->
+					<img src="../img/pointer.png" width="104px" height="104px" class="hide"/>
+					<!--END-->
+				</div>
+			</div>
+			<div class="camera-title ">2.身份证照片需要拍摄两张，分别为正面和反面。</div>
+			<div class="commont-rahmen mg-t15 " id="J_workCertificate">
+				<!--未选择图片显示-->
+				<div class="not-picture">
+					<img src="../img/person.png" />
+					<p>工作证明</p>
+					<img src="../img/camera.png" />
+				</div>
+				<!--END-->
+				
+				<!--选择图片显示 去掉class  给你not-picture 加上class hide-->
+				<img src="../img/pointer.png" width="104px" height="104px" class="hide"/>
+				<!--END-->
+			</div>
+    		<div class="camera-title ">3.工作证明需要拍摄一张，可为劳动合同（甲乙方签字盖章页）、盖有公章的公司证明、工牌、名片。</div>
+    	</div>
+    </section>
+	<div id="J_cmp" class="hide">
+		<div class="h-mask-container" style="display: block;"></div>
+		<!--本人照片-->
+		<div class="courrent-picture hide">
+			<!--选择图片后改变src的值-->
+			<img src="../img/r.png" class="modle-picture"/>
+			<!--END-->
+			<div class="demand-prompt">
+				<p class="line-type">拍出真实的自己</p>
+				<p>请手持身份证拍摄，要求五官清晰切无遮<br/>挡，身份证资料清晰可辨。</p>
+			</div>
+			<div class="choose-picture">
+				从相册选择
+				<input type="file"  class="file-btn" />
+			</div>
+		</div>
+		<!--END-->
+		<!--正面身份证-->
+		<div class="courrent-picture hide ">
+			<!--选择图片后改变src的值-->
+			<img src="../img/z_sfz.jpg" class="modle-picture"/>
+			<!--END-->
+			<div class="demand-prompt">
+				<p class="line-type">拍摄身份证正面照</p>
+				<p>必须本人身份证，内容清晰可辨。</p>
+			</div>
+			<div class="choose-picture">
+				从相册选择
+				<input type="file"  class="file-btn" />
+			</div>
+		</div>
+		<!--END-->
+		<!--反面身份证-->
+		<div class="courrent-picture hide">
+			<!--选择图片后改变src的值-->
+			<img src="../img/f_sfz.jpg" class="modle-picture"/>
+			<!--END-->
+			<div class="demand-prompt">
+				<p class="line-type">拍摄身份证反面照</p>
+				<p>必须本人身份证，内容清晰可辨。</p>
+			</div>
+			<div class="choose-picture">
+				从相册选择
+				<input type="file"  class="file-btn" />
+			</div>
+		</div>
+		<!--END-->
+		<!--工作证明-->
+		<div class="courrent-picture hide">
+			<!--选择图片后改变src的值-->
+			<img src="../img/gszm.jpg" class="modle-picture"/>
+			<!--END-->
+			<div class="demand-prompt">
+				<p class="line-type">拍摄身份证正面照</p>
+				<p>必须本人身份证，内容清晰可辨。</p>
+			</div>
+			<div class="choose-picture">
+				从相册选择
+				<input type="file"  class="file-btn" />
+			</div>
+		</div>
+		<!--END-->
+	</div>
+<!-- javascript -->
+<script src="../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../thirdvendor/zepto1.0/touch.js"></script>
+<script>
+$(function(){
+	$("#J_person").on("tap",function(){
+		$("#J_cmp").removeClass("hide");
+		$(".courrent-picture ").eq(0).removeClass("hide");
+	})
+	$("#J_idz").on("tap",function(){
+		$("#J_cmp").removeClass("hide");
+		$(".courrent-picture ").eq(1).removeClass("hide");
+	})
+	$("#J_idf").on("tap",function(){
+		$("#J_cmp").removeClass("hide");
+		$(".courrent-picture ").eq(2).removeClass("hide");
+	})
+	$("#J_workCertificate").on("tap",function(){
+		$("#J_cmp").removeClass("hide");
+		$(".courrent-picture ").eq(3).removeClass("hide");
+	})
+});
+</script>
+
+</body>
+</html>

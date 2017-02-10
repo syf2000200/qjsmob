@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>空白模板</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" href="../../thirdvendor/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../less/app.css">
+
+    <!-- holder.js 图片站位 可去掉-->
+    <script src="../../thirdvendor/holder/holder.min.js"></script>    
+</head>
+    
+<body class="bgf0">
+    <header class="header header-color">
+        <div>
+            <p class="h-top">领红包</p>
+            <a href="" class="h-item-left icon-angle-left"></a>
+        </div>                     
+    </header>
+    <section>
+		<div class="lottery-wrap">
+			<div class="title-back">
+				<img src="../img/get_img.jpg" class="img-rsp"/>
+				<div class="activity-state" id="activityState">活动说明</div>
+			</div>
+			<div class="invite-step">
+				<img src="../img/step2.png" class="step-detail"/>
+				<img src="../img/bz.png" class="step-picture"/>
+			</div>
+		</div>
+    </section>
+
+	<!--浮動底部 立即下载-->
+	<div class="wrap-location">
+		<div class="stratum"></div>
+		<div class="assistant">
+			<a href="#" class="btn-red">领 "娶" 1938体验金</a>
+		</div>
+	</div>
+	<!--END-->
+	<!--分享微信弹出层-->
+	<div id="J_share">
+		<div class="oneKey-share"></div>
+		<div class="oneKey-back">
+			<img src="../img/boult.png" class="share-boult">
+			<div class="assistant" style="padding: 0 40px;">
+				<input type="button" class="btn-red back3f" id="J_konws" value="我知道了" />
+			</div>
+		</div>
+	</div>
+	<!--END-->
+	<!--活动说明-->
+	<div id="J_activity" >
+		<div id="bodymask" style="display:block;opacity: 0.5;"></div>
+		<div class="activity-detail">
+			<h4 class="title-info">溫馨提示</h4>
+			<div style="padding:0 16px ;font-size:12px">
+				<p style="text-align: left;margin-bottom:4px;">亲，</p>
+				<div style="text-align: left;line-height: 24px;">
+					&nbsp;&nbsp;你的小伙伴成功迎娶了一位“仟”金小姐，<br/>并给你派发了1938元的体验金大礼包，马上<br/>点击“领‘娶’”1938元体验金吧！成功领<br/>取，还会给小伙伴带去800元的体验金红包哦<br/>！
+	 				<p> &nbsp;&nbsp;据说还有百亿红包正在等待被领取！</p>
+				</div>
+	 			
+  			</div>
+			<div id="J_konw">我知道啦</div>
+		</div>
+	</div>
+	<!--END-->
+<!-- javascript -->
+<script src="../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../thirdvendor/zepto1.0/touch.js"></script>
+<script>
+
+	$(function(){
+		//关闭微信分享
+		$("#J_konws").on("tap",function(){			
+			$("#J_share").hide();
+		})
+		//显示活动说明
+		$("#activityState").on("tap",function(){			
+			$("#J_activity").show();
+		})
+		//关闭活动说明
+		$("#J_konw").on("tap",function(){			
+			$("#J_activity").hide();
+		})
+	})
+	
+
+	 
+</script>
+</body>
+</html>

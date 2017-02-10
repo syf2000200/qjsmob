@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>分权--分权订单</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" href="../../thirdvendor/font-awesome/font-awesome.css">
+    <link rel="stylesheet/less" type="text/css" href="../less/app.less">
+    <script src="../../thirdvendor/less/less-1.7.4.min.js"></script>
+
+    <!-- holder.js 图片站位 可去掉-->
+    <script src="../../thirdvendor/holder/holder.min.js"></script>    
+</head>
+    
+<body class="bgf0">
+    <header class="header">
+        <div class="h-topbox">
+            <p class="h-top">审核中借贷详情</p>
+            <a href="" class="h-item-left icon-angle-left"></a>
+            <a href="" class="h-item-right"><img src="../img/icon-home.png"/></a>
+        </div>
+    </header>
+    <section>
+        <ul class="h-tab-nav2 nav1 clearfix mg0">
+            <li class="active"><a href="javascript:;">认证资料审核</a></li>
+            <li><a href="javascript:;">借贷申请审核</a></li>
+        </ul> 
+    	<div class="my-details show">
+    		<h3 class="h-title4 bor-t-n">资金明细<span class="rede4 h-right fs12">审核未通过</span></h3>
+    		<h3 class="h-title3 mg-t10">资金明细</h3>
+    		<div class="my-details-conh">
+	            <div class="h-detail1-imgbox">
+	                <span><img src="../img/detail1icon1.png" alt=""></span>
+	                <span><img src="../img/detail1icon2.png"  alt=""></span>
+	                <span><img src="../img/detail1icon3.png"  alt=""></span>
+	                <span><img src="../img/detail1icon4.png"  alt=""></span>
+	            </div>
+    			<p class="my-details-p">工作认证审核未通过，请前往PC网站重新上传提交</p>
+    			<!--<div class="my-details-conj">
+    				<div class="my-details-jd">
+    					<p>认证状态</p>
+    					<div class="my-details-blueba">
+				    		<div class="h-bluebar">
+				                <div class="barcenter rede4" style="width: 30%;"></div>
+				            </div>
+    					</div>
+    				</div>
+    				<p class="my-details-jp">已通过一项<span>预计3个工作日内完成</span></p>
+    			</div>-->
+    		</div>
+            <h3 class="h-title3">借贷信息</h3>
+            <div class="my-details-con">
+            	<p>借款金额<span>￥120,000.00</span></p>
+            	<p>借款期限<span>6个月</span></p>
+            	<p>还款利率<span>8%</span></p>
+            	<p>还款方式<span>先息一次还本</span></p>
+            	<p>月还款额<span>￥145,000.00</span></p>
+            </div>
+    	</div>
+    	
+    	
+    	
+    	<div class="my-details hide">
+    		<div class="my-details-conhb container">
+    			<p>认证资料审核：<span class="rede4">审核中</span></p>
+    			<p>原因：<span>预计一个工作日内完成</span></p>
+    		</div>
+            <h3 class="h-title3 mg-t10">漫江一期K排7号*121212</h3>
+            <h3 class="h-title3 bor-t-n">借贷信息</h3>
+            <div class="my-details-con">
+            	<p>借款金额<span>￥120,000.00</span></p>
+            	<p>借款期限<span>6个月</span></p>
+            	<p>还款利率<span>8%</span></p>
+            	<p>还款方式<span>先息一次还本</span></p>
+            	<p>月还款额<span>￥145,000.00</span></p>
+            </div>
+    	</div>
+    </section>
+
+<!-- javascript -->
+<script src="../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../thirdvendor/zepto1.0/touch.js"></script>
+<script>
+$(function(){
+// JS实现选项卡切换
+
+tab('.h-tab-nav2 li','.my-details')
+function tab(tab,panel){
+    var tab = $(tab),
+        panel = $(panel),
+        i, j, len = tab.length,bindclick;
+
+    bindclick = function(i) {
+        tab[i].onclick = function() {
+            for (j = 0; j < len; j++) {
+                tab[j].className = tab[j].className.replace('active', '');
+                panel[j].style.display = 'none';
+                
+            }
+            panel[i].style.display = 'block';
+            tab[i].className += 'active';
+        };
+        
+    };
+    for (i = 0; i < len; i++) {
+        bindclick(i);
+    }
+}
+});
+</script>
+
+
+
+</body>
+</html>

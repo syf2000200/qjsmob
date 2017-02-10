@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>收益详情</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" href="../../../thirdvendor/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../../less/app.css">
+    <link rel="stylesheet" type="text/css" href="../../css/UI3/order.css">
+    <script src="../../../thirdvendor/less/less-1.7.4.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" href="../../css/currentIncome1019.css">
+    <!-- holder.js 图片站位 可去掉-->
+    <script src="../../../thirdvendor/holder/holder.min.js"></script>
+</head>
+    
+<body class="bgf0 ui-3">
+    <header class="header headerfixed">
+        <div class="h-topbox">
+            <p class="h-top">收益详情</p>
+            <a href="" class="h-item-left icon-angle-left"></a>
+        </div>
+    </header>
+    <section>
+        <div class="h-falseheader-ylt-ord-de bgfff"> </div>
+        <div class="banner_content dtl">
+            <a href="">
+                <div class="ytoday_income">
+                    <strong>55.23</strong>
+                    <span>昨日收益(元)</span>
+                    <s class="ended"></s>
+                    <s class="timeout"></s>
+                </div>
+            </a>
+            <div class="total">
+                <span>累计收益(元)</span>
+                <strong class="fomat">233455.23</strong>
+            </div>
+        </div>
+        <div class="detail_info bgfff">
+            <ul>
+                <li>项目名称：<span class="person">新奇世界-由山由谷5B项目二期融资</span></li>
+                <li>订单号：<span>QSLC-150910105507193074</span></li>
+                <li>理财本金：<span><b>2,000.00元</b>(含<b>50.00元</b>现金券)</span></li>
+                <li>预期年化收益率：<span><b>15.00%</b>(含<b>3.00%</b>加息券)</span></li>
+                <li>剩余天数：<span>60天</span></li>
+                <li class="rede4">逾期天数：<span class="rede4">1天</span></li>
+                <li class="rede4">累计罚息：<span class="rede4">2.31元</span></li>
+                <li>创建时间：<span>2016-03-03 15:46:02</span></li>
+                <li>起息时间：<span>2016-03-07</span></li>
+            </ul>
+        </div>
+        <div class="contract bgfff">
+            <div>
+                电子合同
+                <a href="">《借款协议》</a>
+            </div>
+        </div>
+        <div class="item_info">
+            <h4>项目信息</h4>
+            <div class="bgfff">
+                <dl>
+                   <dt>新奇世界-由山由谷5B项目二期融资007</dt>
+                   <dd>
+                       <a href="">
+                           <div>
+                               <img src="../../img/UI3/itemPic.jpg">
+                               <ul>
+                                   <li>预期年化收益：<span>12.00%</span></li>
+                                   <li>理财期限：<span>360天</span></li>
+                                   <li>可购金额：<span>3,000,000.00元</span></li>
+                               </ul>
+                           </div>
+                       </a>
+                   </dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+    <div class="bg" style="background:#000;opacity:0.7;position:fixed;width:100%;height:100%;top:0;left:0; display:none;"></div>
+	<!--<div class="pay-main">
+		<span>支付剩余时间<font class="rede4">23小时38分23秒</font></span>
+		<a href="#" class="btn-pay"> 立即支付</a>
+	</div>-->
+<!-- javascript -->
+<script src="../../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../../thirdvendor/zepto1.0/touch.js"></script>
+<script>
+$(function(){
+
+    //选项卡
+    tab('.h-tab-nav li','.h-detailtab');
+    function tab(tab,panel){
+        var tab = $(tab),
+            panel = $(panel),
+            i, j, len = tab.length,bindclick;
+
+        bindclick = function(i) {
+            tab[i].onclick = function() {
+                for (j = 0; j < len; j++) {
+                    tab[j].className = tab[j].className.replace('active', '');
+                    panel[j].style.display = 'none';
+                    
+                }
+                panel[i].style.display = 'block';
+                tab[i].className += 'active';
+            };
+            
+        };
+        for (i = 0; i < len; i++) {
+            bindclick(i);
+        }
+    }
+
+    $('.fomat').each(function(){
+        var fomat = format (parseInt($(this).text()));
+        $(this).text(fomat);
+    });
+})
+function format (num) {
+    return (num.toFixed(2) + '').replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,');
+}
+</script>
+
+
+
+</body>
+</html>

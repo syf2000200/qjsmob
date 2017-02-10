@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>空白模板</title>
+	<meta name="author" content="Hifang.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--  网站开启对 web app 程序的支持 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  <!-- 指定的iphone中safari顶端的状态条的样式 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-itunes-app" content="app-id=432274380" /><!--  iPhone显示下载AppStore的banner -->
+    <meta http-equiv="Expires" CONTENT="-1">   <!--  网页在任何时候都不能被Cache存储        -->
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">  
+    <link rel="stylesheet" href="../../../thirdvendor/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../../less/app.css">
+    <script src="../../../thirdvendor/less/less-1.7.4.min.js"></script>
+
+    <!-- holder.js 图片站位 可去掉-->
+    <script src="../../../thirdvendor/holder/holder.min.js"></script>    
+</head>
+    
+<body>
+    <header class="header yellowff bordert-0">
+        <div >
+            <p class="h-top">邀请好友</p>
+            <a href="" class="h-item-left icon-angle-left"></a>
+            <div class="invite-rule">邀请规则</div>
+        </div>
+    </header>
+    <section class="yellowff" style="padding-bottom: 30px;">
+		<img src="../../img/active/invite_firends/t_picture.jpg" class="img-rsp"/>
+		<!--我的邀请-->
+    	<div class="my-invites">
+    		<img src="../../img/active/invite_firends/my_i.jpg" class="my-invites-picture" />
+    		<img src="../../img/active/invite_firends/b.jpg" class="b-picture"/>
+    		<div class="invite-person">
+    			<div class="fLeft invite-number">
+    				<span>我的邀请收入</span>
+    				<span><font>100</font>元  </span>
+    			</div>
+    			<div class="fRight invite-number">
+    				<span>邀请人数</span>
+    				<span><font>15</font>人</span>
+    			</div>
+    		</div>
+    		<a href="#" class="fRight invite-record">邀请记录 ></a>
+    	</div>     
+    	<!--如何邀请好友-->
+    	<div class="how-invite-firend">
+			<img src="../../img/active/invite_firends/my_r.png" class="my-invites-picture" style="top:-17px"/>
+    		<img src="../../img/active/invite_firends/b.jpg" class="b-picture" />
+    		<div class="ewms-picture">
+    			<img src="../../img/active/invite_firends/ewm.jpg" width="97px" height="97px"/>
+    		</div>
+    		<div class="step-flows">
+    			<div class="btn-order">1</div>
+    			<p>好友手机扫您的专属二维码注册</p>
+    		</div>
+    		<div class="step-flows">
+    			<div class="btn-order">2</div>
+    			<p>好友注册时在邀请码处填写您的手机号</p>
+    		</div>
+    		<div class="step-flows">
+    			<div class="btn-order">3</div>
+    			<p>好友通过您分享的专属链接注册</p>
+    		</div>
+    		<input type="text" class="copy-url" id="J_url" value="http://muc.qianjins.com/user/register.html?retu" />
+    		<input type="button" class="copy-info" value="复制给好友" onclick="copyUrl2()"/>
+    	</div>
+    	<!--分享-->
+    	<div class="f-shader">
+	    	<a href="#">
+	    		<img src="../../img/active/invite_firends/web.png" />
+	    		<span>分享到新浪微博</span>
+	    	</a>
+	    	<a href="#">
+	    		<img src="../../img/active/invite_firends/kj.png" />
+	    		<span>分享到QQ空间</span>
+	    	</a>
+    	</div>
+    </section>
+  
+<script src="../../../thirdvendor/zepto1.0/zepto.js"></script>
+<script src="../../../thirdvendor/zepto1.0/touch.js"></script>
+<script src="../../../thirdvendor/layer.m/layer.m.js"></script>
+<script>
+$(function(){
+
+	$(".invite-rule").on("tap",function(){
+	        var htmlInfo='<div class="invest-gba">'
+								+'<h4 class="invite-titles">好友邀请规则</h4>'
+								+'<p>1.邀请好友注册成功，好友随机获得5.88-118元现金红包</p>'
+								+'<p>2.邀请好友购买秒秒赚理财产品后，您即刻获得1.5%高额佣金</p>'
+								+'<p>3.本活动规则最终解释权归仟金所所有，如有任何疑问请致电400-805-1000</p>'
+								+'<div class="myKnow">知道了</div>'
+							+'</div>';
+			var index =layer.open({
+			    type: 1,
+			    content: htmlInfo,
+			    style: 'width: 90%;height: auto;padding:3%;box-sizing: border-box;'
+			});
+			
+			$(document).on("tap",".myKnow",function(){
+				layer.close(index)
+			})
+	})
+	
+})
+
+//复制链接
+  function copyUrl2(){	
+	  var Url2=document.getElementById("J_url");
+	  Url2.select(); // 选择对象
+	  document.execCommand("Copy"); // 执行浏览器复制命令
+	}
+</script>
+
+
+
+</body>
+</html>
